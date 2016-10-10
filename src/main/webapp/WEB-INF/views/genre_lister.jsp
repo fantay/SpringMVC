@@ -22,7 +22,7 @@
                     <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                     <a href="supprimer_genre/${genre.id}">Supprimer</a>
                     <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                    <a href="">Modifier</a>
+                    <a href="modifier_genre/${genre.id}">Modifier</a>
                 </li>
 
             </c:forEach>
