@@ -12,6 +12,7 @@ import streaming.entity.Film;
  *
  * @author tom
  */
+
 public interface FilmCrudService extends CrudRepository<Film, Long>{
     
 }

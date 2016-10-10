@@ -5,7 +5,9 @@
  */
 package streaming.controller;
 
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -17,9 +19,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomePageController {
     
-    @RequestMapping(method = RequestMethod.GET, value = "/")
-    public String homePage(){
+    @RequestMapping(method = RequestMethod.GET, value = "/home")
+    public String homePage(Model m){
+     
+        m.addAttribute("titre", "Bienvenue, cette page qui fonctionne grâce a un attribut.");
         
+        m.addAttribute("lien_genre", "liste_genre");
+             
         return "home_page.jsp";
     }
 }

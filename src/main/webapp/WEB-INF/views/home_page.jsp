@@ -12,6 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Coucou la page fonctionne</h1>
+        <h1>${titre}</h1>
+        
+        <a href="${lien_genre}">Page des genres</a>
     </body>
 </html>
