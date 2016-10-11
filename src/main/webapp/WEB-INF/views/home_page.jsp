@@ -13,7 +13,9 @@
     </head>
     <body>
         <h1>${titre}</h1>
-        
+        <br/>
+        <a href="${lien_film}">Page des films</a>
+        <br/>
         <a href="${lien_genre}">Page des genres</a>
     </body>
 </html>

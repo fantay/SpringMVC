@@ -16,20 +16,20 @@
     <body>
         
 
-        <h1>Liste des Genres</h1>
+        <h1>Liste des films</h1>
         <ul>
-            <c:forEach items="${listegenre}" var="genre">
+            <c:forEach items="${listefilm}" var="film">
 
-                <li>${genre.nom}
+                <li>${film.titre}
                     <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                    <a href="<spring:url value="supprimer_genre/${genre.id}"/>">Supprimer</a>
+                    <a href="<spring:url value="supprimer_film/${film.id}"/>">Supprimer</a>
                     <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                    <a href="<spring:url value="modifier_genre/${genre.id}"/>">Modifier</a>
+                    <a href="<spring:url value="modifier_film/${film.id}"/>">Modifier</a>
                 </li>
 
             </c:forEach>
                 
-                <h4><a href="<spring:url value="/ajout_genre"></spring:url>">Ajouter un genre</a></h4>
+                <h4><a href="<spring:url value="/ajout_film"></spring:url>">Ajouter un film</a></h4>
                 
         </ul>
         

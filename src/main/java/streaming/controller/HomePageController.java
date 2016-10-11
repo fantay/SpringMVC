@@ -19,10 +19,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomePageController {
     
-    @RequestMapping(method = RequestMethod.GET, value = "/home")
+    @RequestMapping(method = RequestMethod.GET, value = {"/home", "/"})
     public String homePage(Model m){
      
         m.addAttribute("titre", "Bienvenue, cette page qui fonctionne grâce a un attribut.");
+        
+        m.addAttribute("lien_film", "liste_film");
         
         m.addAttribute("lien_genre", "liste_genre");
              

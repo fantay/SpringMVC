@@ -26,6 +26,18 @@ public class GenreController {
     @Autowired
     private GenreCrudService serviceGenre;
     
+    @RequestMapping(method = RequestMethod.POST, value = "/ajout_genre")
+    public String ajouterPost(@ModelAttribute("newGenre") Genre genre){
+        serviceGenre.save(genre);
+        return "redirect:/liste_genre";
+    }
+    
+    @RequestMapping(method = RequestMethod.GET, value = "/ajout_genre")
+    public String ajouterGet(Model m ){
+        m.addAttribute("newGenre", new Genre());
+        return "ajout_genre.jsp";
+    }
+    
     @RequestMapping(method = RequestMethod.POST, value = "/modifier_genre")
     public String modifierPost(@ModelAttribute("genreAct") Genre genre){
         serviceGenre.save(genre);
@@ -49,7 +61,7 @@ public class GenreController {
         return "redirect:/liste_genre";
     }
 
-    @RequestMapping(value = {"/liste_genre","/"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/liste_genre", method = RequestMethod.GET)
     public String lister(Model m) {
 
         List<Genre> l = (List<Genre>) serviceGenre.findAllByOrderByNomAsc();
