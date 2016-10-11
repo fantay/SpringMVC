@@ -32,6 +32,12 @@ public class FilmController {
     @Autowired
     private GenreCrudService servicegenre;
     
+    @RequestMapping(method = RequestMethod.GET, value = "/supprimer_film/{val}")
+    public String supprimerFilm(@PathVariable("val") long idASupprimer){
+        serviceFilm.delete(idASupprimer);
+        return "redirect:/liste_film";
+    }
+    
     @RequestMapping(method = RequestMethod.POST, value = "/ajout_film")
     public String ajouterfilmPost(@ModelAttribute("newFilm") Film film){
         serviceFilm.save(film);
