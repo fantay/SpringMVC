@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import streaming.entity.Film;
 import streaming.service.FilmCrudService;
+import streaming.service.GenreCrudService;
 
 /**
  *
@@ -28,6 +29,9 @@ public class FilmController {
     @Autowired
     private FilmCrudService serviceFilm;
     
+    @Autowired
+    private GenreCrudService servicegenre;
+    
     @RequestMapping(method = RequestMethod.POST, value = "/ajout_film")
     public String ajouterfilmPost(@ModelAttribute("newFilm") Film film){
         serviceFilm.save(film);
@@ -38,6 +42,7 @@ public class FilmController {
     @RequestMapping(method = RequestMethod.GET, value = "/ajout_film")
     public String ajouterFilmGet(Model m){
         m.addAttribute("newFilm", new Film());
+        m.addAttribute("genres", servicegenre.findAllByOrderByNomAsc());
         return "ajout_film.jsp";
     }
     

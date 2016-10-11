@@ -20,6 +20,12 @@
         <form:form modelAttribute="newFilm">
             <label>Nom du film</label>
             <form:input path="titre" />
+            <br/>
+            <br/>
+            <label>Genre</label>
+            <form:select path="genre.id" items="${genres}" itemLabel="nom" itemValue="id"/>
+            <br/>
+            <br/>
             <input type="submit" value="Ajouter"/>
         </form:form>
         
